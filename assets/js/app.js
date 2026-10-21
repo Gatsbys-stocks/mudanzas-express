@@ -94,7 +94,7 @@
     index = (i + figs.length) % figs.length;
     var src = figs[index].querySelector("img");
     var text = figs[index].querySelector("figcaption");
-    img.src = src.currentSrc || src.src;
+    img.src = src.getAttribute("src");
     img.alt = src.alt;
     cap.textContent = text ? text.textContent : src.alt;
     var many = figs.length > 1;

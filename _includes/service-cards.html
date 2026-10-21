@@ -6,7 +6,7 @@
 <div class="bento">
   {%- for s in site.data.services %}
   <article class="card has-photo{% if forloop.first %} is-dark span-2{% elsif forloop.last %} is-accent span-2{% endif %}">
-    <div class="card-photo"><div class="card-photo-img"><img src="{{ '/assets/img/' | append: s.image | relative_url }}" alt="{{ s.image_alt }}" loading="lazy" width="800" height="450"></div>{% include icon.html name=s.icon class="card-ico" %}</div>
+    <div class="card-photo">{%- assign big = '/assets/img/' | append: s.image | relative_url -%}{%- assign small = big | replace: '.webp', '-640.webp' -%}<div class="card-photo-img"><img src="{{ big }}" srcset="{{ small }} 640w, {{ big }} 1200w" sizes="(min-width:900px) 570px, (min-width:600px) 46vw, 92vw" alt="{{ s.image_alt }}" loading="lazy" width="1200" height="675"></div>{% include icon.html name=s.icon class="card-ico" %}</div>
     <div class="card-body">
       {% if include.full %}<h2 class="card-title">{{ s.page_title }}</h2><p>{{ s.long }}</p>{% include wa-button.html class="link" label="Pedir presupuesto →" %}{% else %}<h3>{{ s.title }}</h3><p>{{ s.short }}</p>{% endif %}
     </div>

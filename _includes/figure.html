@@ -1,2 +1,4 @@
-{%- comment -%} Uso: {% include figure.html src="flota/x.jpg" alt="..." caption="..." %} {%- endcomment -%}
-<figure data-lightbox><img src="{{ '/assets/img/' | append: include.src | relative_url }}" alt="{{ include.alt }}" loading="lazy" width="800" height="600">{% if include.caption %}<figcaption>{{ include.caption }}</figcaption>{% endif %}</figure>
+{%- comment -%} Uso: {% include figure.html src="flota/x.webp" alt="..." caption="..." %}  (x.webp = grande, x-640.webp = pequena) {%- endcomment -%}
+{%- assign big = '/assets/img/' | append: include.src | relative_url -%}
+{%- assign small = big | replace: '.webp', '-640.webp' -%}
+<figure data-lightbox><img src="{{ big }}" srcset="{{ small }} 640w, {{ big }} 1200w" sizes="(min-width:900px) 560px, 92vw" alt="{{ include.alt }}" loading="lazy" width="1200" height="900">{% if include.caption %}<figcaption>{{ include.caption }}</figcaption>{% endif %}</figure>
