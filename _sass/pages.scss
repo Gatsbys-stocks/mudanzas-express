@@ -1,12 +1,15 @@
 /* Bloques especificos de cada pagina: portada y contacto */
 
 /* ---- Portada ---- */
-.hero{background:radial-gradient(760px 420px at 90% 0,rgba(255,90,31,.14),transparent 65%),linear-gradient(180deg,var(--soft) 0%,#fff 100%);overflow:hidden}
-.hero-grid{display:grid;gap:48px;padding-top:124px;padding-bottom:110px;align-items:center}
+.hero{position:relative;background:linear-gradient(180deg,var(--surface) 0%,var(--bg) 100%);overflow:hidden}
+.hero::before,.hero::after{content:"";position:absolute;border-radius:50%;filter:blur(70px);pointer-events:none}
+.hero::before{width:480px;height:480px;right:-120px;top:-140px;background:var(--brand);opacity:.22;animation:drift 12s ease-in-out infinite alternate}
+.hero::after{width:380px;height:380px;left:-140px;bottom:40px;background:var(--amber);opacity:.2;animation:drift 15s ease-in-out infinite alternate-reverse}
+.hero-grid{position:relative;z-index:1;display:grid;gap:48px;padding-top:124px;padding-bottom:110px;align-items:center}
 .hero-grid>*{min-width:0}
-.pill{display:inline-flex;align-items:center;gap:9px;margin:0 0 24px;padding:7px 15px;border:1px solid var(--line);border-radius:999px;background:#fff;font-size:.85rem;font-weight:600;color:var(--text)}
-.pill .dot{width:8px;height:8px;border-radius:50%;background:var(--wa);box-shadow:0 0 0 4px rgba(37,211,102,.22)}
-.mark{background:linear-gradient(transparent 62%,rgba(255,90,31,.32) 62%);padding:0 .06em}
+.pill{display:inline-flex;align-items:center;gap:9px;margin:0 0 24px;padding:7px 15px;border:1px solid var(--line);border-radius:999px;background:var(--bg);font-size:.85rem;font-weight:600;color:var(--text)}
+.pill .dot{width:8px;height:8px;border-radius:50%;background:var(--wa);box-shadow:0 0 0 4px rgba(37,211,102,.22);animation:blink 2s ease-in-out infinite}
+.mark{background:linear-gradient(var(--amber),var(--amber)) 0 88%/100% 36% no-repeat;padding:0 .06em;animation:mark 1s .7s cubic-bezier(.2,.7,.2,1) both}
 .hero .lead{color:var(--muted);font-size:1.2rem;max-width:540px}
 .hero-actions{display:flex;flex-wrap:wrap;gap:12px;margin:28px 0 26px}
 .hero-points{list-style:none;display:flex;flex-wrap:wrap;gap:8px 24px;color:var(--text);font-size:.95rem;font-weight:600}
@@ -14,9 +17,9 @@
 .hero-points .mini{stroke-width:2.6}
 .hero-media{position:relative;margin-bottom:26px}
 .hero-main{width:100%;aspect-ratio:5/4;object-fit:cover;border-radius:32px;box-shadow:var(--shadow)}
-.hero-sub{position:absolute;left:14px;bottom:-26px;width:42%;aspect-ratio:4/3;object-fit:cover;border-radius:22px;border:6px solid #fff;box-shadow:0 16px 40px rgba(14,17,22,.22)}
-.hero-chip{position:absolute;top:16px;right:16px;display:flex;align-items:center;gap:10px;padding:10px 16px;border-radius:16px;background:rgba(255,255,255,.88);-webkit-backdrop-filter:blur(12px);backdrop-filter:blur(12px);box-shadow:0 10px 28px rgba(14,17,22,.18);font-size:.82rem;line-height:1.3;color:var(--text)}
-.hero-chip strong{display:block;font-size:.9rem;color:var(--ink)}
+.hero-sub{position:absolute;left:14px;bottom:-26px;width:42%;aspect-ratio:4/3;object-fit:cover;border-radius:22px;border:6px solid var(--bg);box-shadow:0 16px 40px rgba(11,16,32,.3)}
+.hero-chip{position:absolute;top:16px;right:16px;display:flex;align-items:center;gap:10px;padding:10px 16px;border-radius:16px;background:var(--glass);-webkit-backdrop-filter:blur(12px);backdrop-filter:blur(12px);box-shadow:0 10px 28px rgba(11,16,32,.2);font-size:.82rem;line-height:1.3;color:var(--text)}
+.hero-chip strong{display:block;font-size:.9rem;color:var(--heading)}
 .hero-chip .mini{width:26px;height:26px}
 @media (min-width:900px){
   .hero-grid{grid-template-columns:1.02fr .98fr;gap:64px;padding-top:150px;padding-bottom:140px}
@@ -25,11 +28,11 @@
 
 /* ---- Formulario rapido bajo la portada ---- */
 .quick{position:relative;z-index:3;margin-top:-76px}
-.quick-card{display:grid;gap:14px;background:var(--ink);border-radius:32px;padding:28px 24px;box-shadow:0 26px 70px rgba(14,17,22,.32)}
+.quick-card{display:grid;gap:14px;background:var(--panel);border-radius:32px;padding:28px 24px;box-shadow:0 26px 70px rgba(11,16,32,.35)}
 .quick-card h2{font-size:1.6rem;margin:0 0 .2em;color:#fff}
-.quick-card p{margin:0;color:#aeb8c6}
+.quick-card p{margin:0;color:var(--on-panel-muted)}
 .quick-card label{margin:0;font-size:.85rem;color:#d3dae4}
-.quick-card input,.quick-card select{background:#fff}
+.quick-card input,.quick-card select{background:var(--field-panel);color:var(--field-panel-text)}
 .quick-card .btn{align-self:end;width:100%}
 .quick-card .err{margin:0;color:#ff9b8f}
 @media (min-width:900px){
@@ -43,9 +46,10 @@
 .strip{padding:44px 0 8px}
 .strip-grid{display:grid;grid-template-columns:1fr;gap:6px 28px}
 .strip-grid>div{display:flex;gap:14px;align-items:center;padding:14px 0;border-top:1px solid var(--line)}
-.strip-grid strong{display:block;color:var(--ink);font-size:1rem}
+.strip-grid strong{display:block;color:var(--heading);font-size:1rem}
 .strip-grid span{font-size:.92rem;color:var(--muted);line-height:1.4}
-.strip-ico{width:46px;height:46px;padding:11px;border-radius:14px;background:var(--accent-soft);color:var(--accent-d);flex:none}
+.strip-ico{width:46px;height:46px;padding:11px;border-radius:14px;background:var(--brand-soft);color:var(--brand-d);flex:none;transition:transform .35s cubic-bezier(.3,1.6,.5,1)}
+.strip-grid>div:hover .strip-ico{transform:scale(1.15) rotate(-6deg)}
 @media (min-width:600px){
   .strip-grid{grid-template-columns:1fr 1fr}
 }
@@ -55,10 +59,10 @@
 
 /* ---- Contacto ---- */
 .contact-grid{display:grid;gap:28px;align-items:start}
-.wa-card{background:var(--ink);color:#fff;border-radius:var(--r-lg);padding:38px 34px}
+.wa-card{background:var(--panel);color:#fff;border-radius:var(--r-lg);padding:38px 34px}
 .wa-card h2{color:#fff}
 .wa-card>.wa-ico{width:48px;height:48px;color:var(--wa);margin-bottom:14px}
-.wa-card p{color:#c3ccd8}
+.wa-card p{color:var(--on-panel-muted)}
 .wa-card .wa-number{margin:20px 0 0;font-family:var(--font-display);font-size:1.7rem;font-weight:700;color:#fff;letter-spacing:-.02em;user-select:all}
 .wa-card hr{border:0;border-top:1px solid rgba(255,255,255,.16);margin:26px 0}
 @media (min-width:900px){

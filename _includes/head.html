@@ -8,13 +8,24 @@
 <meta property="og:title" content="{{ full_title }}">
 <meta property="og:description" content="{{ page.description }}">
 <meta property="og:type" content="website">
+<meta property="og:site_name" content="{{ site_name }}">
+<meta property="og:locale" content="es_ES">
+<meta property="og:image" content="{{ '/assets/img/brand/og-image.png' | absolute_url }}">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
 <meta property="og:url" content="{{ page.url | absolute_url }}">
-<meta name="theme-color" content="#0f2742">
-<link rel="icon" href="{{ '/assets/img/favicon.svg' | relative_url }}" type="image/svg+xml">
+<meta name="theme-color" content="#ffffff" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#090e1c" media="(prefers-color-scheme: dark)">
+<script src="{{ '/assets/js/boot.js' | relative_url }}"></script>
+<link rel="icon" href="{{ '/assets/img/brand/favicon.svg' | relative_url }}" type="image/svg+xml">
+<link rel="icon" href="{{ '/assets/img/brand/favicon-32.png' | relative_url }}" type="image/png" sizes="32x32">
+<link rel="apple-touch-icon" href="{{ '/assets/img/brand/apple-touch-icon.png' | relative_url }}">
+<link rel="manifest" href="{{ '/manifest.webmanifest' | relative_url }}">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@600;700;800&family=Figtree:wght@400;500;600;700&display=swap">
 <link rel="stylesheet" href="{{ '/assets/css/main.css' | relative_url }}">
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"MovingCompany","name":"{{ site_name }}","url":"{{ site.url }}","areaServed":["España","Francia","Alemania","Portugal"],"address":{"@type":"PostalAddress","addressLocality":"{{ site.data.site.base_city }}","addressCountry":"ES"},"description":"Mudanzas de pisos, casas, oficinas y empresas en toda España y a Francia, Alemania y Portugal."}
+{"@context":"https://schema.org","@type":"MovingCompany","name":"{{ site_name }}","url":"{{ site.url }}","logo":"{{ '/assets/img/brand/icon-512.png' | absolute_url }}","image":"{{ '/assets/img/brand/og-image.png' | absolute_url }}","areaServed":["España","Francia","Alemania","Portugal"],"address":{"@type":"PostalAddress","addressLocality":"{{ site.data.site.base_city }}","addressCountry":"ES"},"description":"Mudanzas de pisos, casas, oficinas y empresas en toda España y a Francia, Alemania y Portugal."}
 </script>

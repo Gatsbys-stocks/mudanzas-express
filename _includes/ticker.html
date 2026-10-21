@@ -1,0 +1,12 @@
+{%- comment -%} Banda de servicios y destinos en movimiento. Se repite dos veces para que el bucle sea continuo. {%- endcomment -%}
+<div class="ticker" aria-label="Servicios y destinos">
+  <div class="ticker-band">
+    {%- for n in (1..2) %}
+    <div class="ticker-set"{% if n == 2 %} aria-hidden="true"{% endif %}>
+      {%- for s in site.data.services %}<span>{{ s.title }}</span><i>✦</i>{% endfor %}
+      <span class="alt">Barcelona</span><i>✦</i>
+      {%- for c in site.data.countries %}<span class="alt">{{ c.name }}</span><i>✦</i>{% endfor %}
+    </div>
+    {%- endfor %}
+  </div>
+</div>

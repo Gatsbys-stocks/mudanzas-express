@@ -1,35 +1,51 @@
-/* Variables, reset, tipografia y utilidades */
+/* Tokens de color (tema claro / oscuro), reset, tipografia y utilidades.
+   El tema oscuro se activa con el sistema (prefers-color-scheme) o con data-theme="dark" en <html>. */
+@mixin dark-tokens{
+  --bg:#090e1c; --surface:#111a30; --surface-2:#18233f; --line:#222f4d;
+  --text:#d9e0f0; --muted:#97a3bd; --heading:#f4f7ff;
+  --brand:#6c8cff; --brand-d:#9bb0ff; --brand-soft:#16254d;
+  --amber:#ffc43a; --amber-soft:#2b2410;
+  --panel:#131d36; --on-panel:#fff; --on-panel-muted:#aab4cc;
+  --field-panel:#1c2a4a; --field-panel-text:#eef2ff;
+  --glass:rgba(17,26,48,.8); --shadow:0 18px 50px rgba(0,0,0,.5);
+  color-scheme:dark;
+}
 :root{
-  --ink:#0e1116; --ink-2:#171c24; --text:#222a35; --muted:#5d6673;
-  --paper:#fff; --soft:#f3f5f8; --line:#e5e8ee;
-  --accent:#ff5a1f; --accent-d:#e04a10; --accent-soft:#fff0e8;
-  --wa:#25d366; --wa-d:#1fbe5c; --sun:#ffc23d;
-  --r-lg:28px; --r-md:18px;
-  --shadow:0 18px 50px rgba(14,17,22,.10);
-  --max:1180px;
+  --bg:#ffffff; --surface:#f2f5fb; --surface-2:#e8eef9; --line:#dfe6f2;
+  --text:#1b2438; --muted:#586179; --heading:#0b1020;
+  --brand:#2456f4; --brand-d:#1b44cc; --brand-soft:#e8eeff;
+  --amber:#ffb703; --amber-soft:#fff4d6;
+  --panel:#0b1020; --on-panel:#fff; --on-panel-muted:#aab4cc;
+  --field-panel:#ffffff; --field-panel-text:#0b1020;
+  --glass:rgba(255,255,255,.82); --shadow:0 18px 50px rgba(11,16,32,.12);
+  --wa:#25d366; --wa-d:#1fbe5c;
+  --r-lg:28px; --r-md:18px; --max:1180px;
   --font-display:"Bricolage Grotesque","Arial Narrow",system-ui,sans-serif;
   --font-body:"Figtree",system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif;
+  color-scheme:light;
 }
+@media (prefers-color-scheme:dark){
+  :root:not([data-theme="light"]){ @include dark-tokens; }
+}
+:root[data-theme="dark"]{ @include dark-tokens; }
+
 *{box-sizing:border-box}
 html{scroll-behavior:smooth}
-body{margin:0;font-size:1.0625rem;font-family:var(--font-body);color:var(--text);background:var(--paper);line-height:1.65;-webkit-text-size-adjust:100%}
+body{margin:0;font-size:1.0625rem;font-family:var(--font-body);color:var(--text);background:var(--bg);line-height:1.65;-webkit-text-size-adjust:100%;transition:background .35s,color .35s}
 img{max-width:100%;height:auto;display:block}
 a{color:inherit}
-h1,h2,h3{font-family:var(--font-display);font-weight:700;line-height:1.06;color:var(--ink);margin:0 0 .5em;letter-spacing:-.03em;text-wrap:balance}
+h1,h2,h3{font-family:var(--font-display);font-weight:700;line-height:1.06;color:var(--heading);margin:0 0 .5em;letter-spacing:-.03em;text-wrap:balance}
 h1{font-size:clamp(2.4rem,6.6vw,4.4rem);font-weight:800;line-height:1.02}
 h2{font-size:clamp(1.9rem,4.2vw,2.9rem)}
 h3{font-size:1.25rem;letter-spacing:-.02em}
 p{margin:0 0 1em}
 ul,ol{padding:0;margin:0}
 figure{margin:0}
-:focus-visible{outline:3px solid var(--accent);outline-offset:3px}
+::selection{background:var(--amber);color:#0b1020}
+:focus-visible{outline:3px solid var(--brand);outline-offset:3px}
 
 .center{text-align:center}
 .mt{margin-top:2.2rem}
 .muted{color:var(--muted);font-size:.95rem}
-.skip{position:absolute;left:-999px;top:0;background:var(--ink);color:#fff;padding:10px 14px;z-index:200}
+.skip{position:absolute;left:-999px;top:0;background:var(--panel);color:#fff;padding:10px 14px;z-index:300}
 .skip:focus{left:10px;top:10px}
-
-@media (prefers-reduced-motion:reduce){
-  html{scroll-behavior:auto}
-}

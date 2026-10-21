@@ -1,5 +1,73 @@
 /* Mudanzas Express BCN - interacciones */
 
+/* ---------- Tema claro / oscuro ---------- */
+(function () {
+  var btn = document.getElementById("themeToggle");
+  if (!btn) return;
+  var dark = window.matchMedia("(prefers-color-scheme: dark)");
+  function current() {
+    return document.documentElement.getAttribute("data-theme") || (dark.matches ? "dark" : "light");
+  }
+  btn.addEventListener("click", function () {
+    var next = current() === "dark" ? "light" : "dark";
+    document.documentElement.setAttribute("data-theme", next);
+    try { localStorage.setItem("theme", next); } catch (e) {}
+  });
+})();
+
+/* ---------- Barra de progreso y cabecera al hacer scroll ---------- */
+(function () {
+  var bar = document.getElementById("progress");
+  var ticking = false;
+  function update() {
+    var max = document.documentElement.scrollHeight - window.innerHeight;
+    var y = window.scrollY || 0;
+    if (bar) bar.style.setProperty("--p", max > 0 ? Math.min(1, y / max) : 0);
+    document.documentElement.classList.toggle("is-scrolled", y > 12);
+    ticking = false;
+  }
+  window.addEventListener("scroll", function () {
+    if (!ticking) { ticking = true; requestAnimationFrame(update); }
+  }, { passive: true });
+  update();
+})();
+
+/* ---------- Foco de luz en las tarjetas (sigue al cursor) ---------- */
+(function () {
+  document.querySelectorAll(".card").forEach(function (card) {
+    card.addEventListener("pointermove", function (e) {
+      var r = card.getBoundingClientRect();
+      card.style.setProperty("--mx", (e.clientX - r.left) + "px");
+      card.style.setProperty("--my", (e.clientY - r.top) + "px");
+    });
+  });
+})();
+
+/* ---------- Aparicion al hacer scroll ---------- */
+(function () {
+  var SELECTOR = ".sec-head, .bento .card, .grid-3 > .card, .steps li, .route, .gallery figure, .faq, .cta-panel, " +
+    ".split > *, .strip-grid > div, .wa-card, .form, .checks.two";
+  var items = [].slice.call(document.querySelectorAll(SELECTOR));
+  var reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  if (!items.length || reduce || !("IntersectionObserver" in window)) {
+    items.forEach(function (el) { el.classList.add("in"); });
+    return;
+  }
+  items.forEach(function (el) {
+    var siblings = el.parentElement ? [].slice.call(el.parentElement.children) : [el];
+    el.setAttribute("data-reveal", "");
+    el.style.setProperty("--d", Math.min(siblings.indexOf(el), 5) * 0.08 + "s");
+  });
+  var io = new IntersectionObserver(function (entries) {
+    entries.forEach(function (entry) {
+      if (!entry.isIntersecting) return;
+      entry.target.classList.add("in");
+      io.unobserve(entry.target);
+    });
+  }, { rootMargin: "0px 0px -8% 0px", threshold: 0.08 });
+  items.forEach(function (el) { io.observe(el); });
+})();
+
 /* ---------- Año del copyright ---------- */
 (function () {
   var year = document.getElementById("year");

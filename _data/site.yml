@@ -6,6 +6,8 @@ base_city: Barcelona
 whatsapp: "34672303715"
 whatsapp_display: "+34 672 30 37 15"
 whatsapp_message: "Hola, quiero pedir presupuesto para una mudanza."
+logo_main: Mudanzas
+logo_sub: Express BCN
 tagline: "Mudanzas para particulares y empresas en toda España y a Francia, Alemania y Portugal. Base en Barcelona."
 # Estadisticas de visitas (GoatCounter). Dejalo vacio para desactivarlas.
 goatcounter: "https://9-s.goatcounter.com/count"

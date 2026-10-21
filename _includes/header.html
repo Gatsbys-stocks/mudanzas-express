@@ -1,12 +1,13 @@
 <header class="site-header">
   <div class="wrap">
     <div class="bar">
-      <a class="logo" href="{{ '/' | relative_url }}" aria-label="{{ site.data.site.name }} - Inicio">{% include icon.html name="truck" class="logo-ico" %}<span>{{ site.data.site.name }}</span></a>
+      <a class="logo" href="{{ '/' | relative_url }}" aria-label="{{ site.data.site.name }} - Inicio">{% include logo-mark.html class="logo-mark" %}<span class="logo-text"><strong>{{ site.data.site.logo_main }}</strong><small>{{ site.data.site.logo_sub }}</small></span></a>
       <nav id="nav" class="nav" aria-label="Principal">
         {%- for item in site.data.navigation %}
         <a href="{{ item.url | relative_url }}"{% if page.url == item.url %} aria-current="page"{% endif %}>{{ item.title }}</a>
         {%- endfor %}
       </nav>
+      <button class="theme-toggle" id="themeToggle" type="button" aria-label="Cambiar entre tema claro y oscuro">{% include icon.html name="moon" class="i-moon" %}{% include icon.html name="sun" class="i-sun" %}</button>
       {% include wa-button.html class="btn btn-wa btn-sm head-wa" label="Pedir presupuesto" %}
       <button class="burger" id="burger" aria-expanded="false" aria-controls="nav" aria-label="Abrir menú"><span></span><span></span><span></span></button>
     </div>
