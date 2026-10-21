@@ -36,7 +36,7 @@ assets/
   js/app.js            Tema, menú móvil, animaciones al hacer scroll, formularios -> WhatsApp y año
   js/count.js          GoatCounter (estadísticas de visitas, licencia ISC)
   img/brand/           Logotipo (SVG y PNG), favicon, iconos y og-image.png (imagen al compartir)
-  img/flota/           Fotos de camiones y furgonetas
+  img/flota/           Fotos (WebP): flota, servicios, Barcelona. Se asignan en _data/fleet.yml y _data/services.yml
 index.html · servicios.html · mudanzas.html · flota.html · empresa.html · contacto.html
 ```
 
@@ -50,7 +50,7 @@ La cabecera, el pie, el menú y los botones de WhatsApp se escriben **una sola v
 | Firma de copyright (pie) / GoatCounter | `studio` y `goatcounter` en `_data/site.yml` (vacio = sin estadisticas) |
 | Servicios | `_data/services.yml` |
 | Preguntas frecuentes | `_data/faq.yml` |
-| Fotos de la flota | sustituir archivo en `assets/img/flota/` y/o editar `_data/fleet.yml` |
+| Fotos de la flota y de los servicios | sustituir el archivo en `assets/img/flota/` (mismo nombre) o editar `_data/fleet.yml` / `_data/services.yml`; la panorámica es `flota-panoramica.webp` |
 | Textos de una página | el `.html` de esa página |
 | Colores (claro y oscuro) | variables al principio de `_sass/base.scss` (bloque `:root` = claro, `dark-tokens` = oscuro) |
 | Tipografías | `_sass/base.scss`; las fuentes se cargan desde Google Fonts en `_includes/head.html` |

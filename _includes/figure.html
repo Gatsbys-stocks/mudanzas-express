@@ -1,2 +1,2 @@
 {%- comment -%} Uso: {% include figure.html src="flota/x.jpg" alt="..." caption="..." %} {%- endcomment -%}
-<figure><img src="{{ '/assets/img/' | append: include.src | relative_url }}" alt="{{ include.alt }}" loading="lazy" width="1080" height="810">{% if include.caption %}<figcaption>{{ include.caption }}</figcaption>{% endif %}</figure>
+<figure data-lightbox><img src="{{ '/assets/img/' | append: include.src | relative_url }}" alt="{{ include.alt }}" loading="lazy" width="800" height="600">{% if include.caption %}<figcaption>{{ include.caption }}</figcaption>{% endif %}</figure>

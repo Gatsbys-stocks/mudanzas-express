@@ -21,8 +21,8 @@ description: "Mudanzas de pisos, casas, oficinas y empresas en toda España, con
       </ul>
     </div>
     <div class="hero-media">
-      <img class="hero-main" src="{{ '/assets/img/flota/furgoneta-frontal.jpg' | relative_url }}" alt="Furgoneta de gran volumen de la empresa" width="1080" height="810">
-      <img class="hero-sub" src="{{ '/assets/img/flota/furgoneta-interior.jpg' | relative_url }}" alt="Interior de carga de la furgoneta" width="1080" height="810" loading="lazy">
+      <img class="hero-main" src="{{ '/assets/img/flota/camion-rampa.webp' | relative_url }}" alt="Camión de mudanzas abierto, con cajas y un mueble protegido, y la rampa bajada" width="864" height="712">
+      <img class="hero-sub" src="{{ '/assets/img/flota/embalaje.webp' | relative_url }}" alt="Plástico de burbujas, film, mantas y cinta para proteger los muebles" width="736" height="464" loading="lazy">
       <div class="hero-chip">{% include icon.html name="globe" class="mini" %}<span><strong>Mudanzas internacionales</strong>Francia · Alemania · Portugal</span></div>
     </div>
   </div>
@@ -91,12 +91,8 @@ description: "Mudanzas de pisos, casas, oficinas y empresas en toda España, con
       <h2>Vehículos y equipo a tu servicio</h2>
       <p>Disponemos de camiones y de personal para distintos tipos de mudanzas.</p>
     </div>
-    <div class="gallery gallery--2">
-      {%- for photo in site.data.fleet offset: 1 %}
-      {% include figure.html src=photo.image alt=photo.alt %}
-      {%- endfor %}
-    </div>
-    <p class="center mt"><a class="btn btn-outline" href="{{ '/flota/' | relative_url }}">Ver la flota</a></p>
+    {% include pano.html %}
+    <p class="center mt"><a class="btn btn-dark" href="{{ '/flota/' | relative_url }}">Ver la flota</a></p>
   </div>
 </section>
 

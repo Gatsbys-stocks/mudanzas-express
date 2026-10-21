@@ -21,11 +21,11 @@
 .mini{width:20px;height:20px;flex:none;color:var(--brand)}
 
 /* ---- Tarjetas y rejilla bento (con foco de luz que sigue al cursor) ---- */
-.card{position:relative;overflow:hidden;background:var(--surface);border-radius:var(--r-lg);padding:30px;transition:transform .3s cubic-bezier(.2,.7,.2,1),box-shadow .3s}
+.card{--card-bg:var(--surface);position:relative;overflow:hidden;background:var(--card-bg);border-radius:var(--r-lg);padding:30px;transition:transform .3s cubic-bezier(.2,.7,.2,1),box-shadow .3s}
 .card::before{content:"";position:absolute;inset:0;background:radial-gradient(360px circle at var(--mx,50%) var(--my,0%),rgba(36,86,244,.16),transparent 60%);opacity:0;transition:opacity .3s;pointer-events:none}
 .card:hover::before{opacity:1}
 .card>*{position:relative}
-.section.alt .card{background:var(--bg)}
+.section.alt .card{--card-bg:var(--bg)}
 .card:hover{transform:translateY(-5px);box-shadow:var(--shadow)}
 .card p{color:var(--muted);margin:0}
 .card-ico{width:54px;height:54px;padding:13px;border-radius:16px;background:var(--bg);color:var(--brand);box-shadow:0 1px 0 var(--line);margin-bottom:22px;display:block;transition:transform .35s cubic-bezier(.3,1.6,.5,1),background .3s,color .3s}
@@ -37,14 +37,11 @@
 .bento{display:grid;gap:16px;grid-template-columns:1fr}
 .bento .card{display:flex;flex-direction:column}
 .bento .card .link{margin-top:auto;padding-top:16px}
-.bento .is-dark{background:var(--panel)}
+.bento .is-dark{--card-bg:var(--panel)}
 .bento .is-dark h3,.bento .is-dark .card-title{color:#fff}
 .bento .is-dark p{color:var(--on-panel-muted)}
-.bento .is-dark .card-ico{background:rgba(255,255,255,.1);box-shadow:none;color:var(--amber)}
-.bento .is-dark:hover .card-ico{background:var(--amber);color:#0b1020}
 .bento .is-dark .link{color:var(--amber)}
-.bento .is-accent{background:var(--amber-soft)}
-.bento .is-accent .card-ico{background:var(--amber);color:#0b1020}
+.bento .is-accent{--card-bg:var(--amber-soft)}
 .card-title{font-size:1.25rem;margin:0 0 .5em}
 @media (min-width:600px){
   .bento{grid-template-columns:1fr 1fr}
@@ -81,9 +78,8 @@
 }
 
 /* ---- Fotos y galeria (zoom suave al pasar el raton) ---- */
-figure{overflow:hidden;border-radius:var(--r-lg)}
-figure img{border-radius:0;width:100%;aspect-ratio:4/3;object-fit:cover;background:var(--surface);transition:transform .8s cubic-bezier(.2,.7,.2,1)}
-figure:hover img{transform:scale(1.06)}
+figure img{border-radius:var(--r-lg);width:100%;aspect-ratio:4/3;object-fit:cover;background:var(--surface);transition:transform .5s cubic-bezier(.2,.7,.2,1),box-shadow .5s}
+figure:hover img{transform:translateY(-5px);box-shadow:var(--shadow)}
 figcaption{font-size:.92rem;color:var(--muted);padding:12px 4px 0;font-weight:600}
 .gallery{display:grid;gap:18px;grid-template-columns:1fr}
 @media (min-width:600px){
@@ -159,3 +155,45 @@ figcaption{font-size:.92rem;color:var(--muted);padding:12px 4px 0;font-weight:60
 .ticker-set span{white-space:nowrap;font-family:var(--font-display);font-weight:700;font-size:1.35rem;letter-spacing:-.02em;padding:0 22px}
 .ticker-set i{font-style:normal;color:var(--amber);font-size:1.1rem}
 .ticker-set .alt{color:var(--amber)}
+
+/* ---- Tarjetas de servicio con foto ---- */
+.card.has-photo{padding:0;display:flex;flex-direction:column}
+.card-photo{position:relative}
+.card-photo-img{overflow:hidden;aspect-ratio:16/9;border-radius:var(--r-lg) var(--r-lg) 0 0}
+.card-photo-img img{width:100%;height:100%;object-fit:cover;transition:transform .9s cubic-bezier(.2,.7,.2,1)}
+.card:hover .card-photo-img img{transform:scale(1.08)}
+.card-photo .card-ico{position:absolute;left:24px;bottom:-30px;width:60px;height:60px;padding:14px;margin:0;border:5px solid var(--card-bg);background:var(--bg);box-shadow:none}
+.bento .is-dark .card-photo .card-ico,.bento .is-accent .card-photo .card-ico{background:var(--amber);color:#0b1020}
+.card-body{display:flex;flex:1;flex-direction:column;padding:44px 28px 30px}
+@media (min-width:600px){
+  .bento .span-2 .card-photo-img{aspect-ratio:21/9}
+}
+
+/* ---- Panoramica de la flota ---- */
+.pano{position:relative;overflow:hidden;border-radius:var(--r-lg);box-shadow:var(--shadow)}
+.pano img{width:100%;height:auto;min-height:210px;aspect-ratio:1594/460;object-fit:cover;border-radius:0;box-shadow:none;transition:transform 1.2s cubic-bezier(.2,.7,.2,1)}
+.pano:hover img{transform:scale(1.04)}
+.pano-chip{position:absolute;left:16px;bottom:16px;display:flex;align-items:center;gap:10px;margin:0;padding:10px 16px;border-radius:16px;background:var(--glass);-webkit-backdrop-filter:blur(12px);backdrop-filter:blur(12px);box-shadow:0 10px 28px rgba(11,16,32,.2);font-size:.82rem;line-height:1.3;font-weight:500;color:var(--text)}
+.pano-chip strong{display:block;font-size:.92rem;color:var(--heading)}
+.pano-chip .mini{width:24px;height:24px}
+
+/* ---- Foto de Barcelona en el esquema de rutas ---- */
+.route{overflow:hidden}
+.route-photo{margin:-26px -26px 20px}
+.route-photo img{width:100%;aspect-ratio:21/9;object-fit:cover}
+@media (max-width:480px){
+  .route-photo{margin:-18px -18px 16px}
+}
+
+/* ---- Fotos ampliables ---- */
+figure[data-lightbox]{cursor:zoom-in}
+.lightbox{border:0;padding:0;background:transparent;max-width:min(1100px,94vw);max-height:92vh;overflow:visible;color:#fff}
+.lightbox[open]{animation:zoom-in .35s cubic-bezier(.2,.7,.2,1) both}
+.lightbox::backdrop{background:rgba(5,8,18,.84);-webkit-backdrop-filter:blur(6px);backdrop-filter:blur(6px)}
+.lightbox img{display:block;max-width:100%;max-height:78vh;margin:0 auto;border-radius:18px;box-shadow:0 30px 80px rgba(0,0,0,.5)}
+.lightbox p{margin:14px 0 0;text-align:center;font-weight:600}
+.lb-btn{position:fixed;top:50%;display:grid;place-items:center;width:48px;height:48px;margin-top:-24px;border:0;border-radius:50%;background:rgba(255,255,255,.16);color:#fff;font-size:1.8rem;line-height:1;cursor:pointer;transition:background .2s}
+.lb-btn:hover{background:rgba(255,255,255,.3)}
+.lb-prev{left:14px}
+.lb-next{right:14px}
+.lb-close{top:22px;right:14px;margin-top:0;font-size:1.5rem}

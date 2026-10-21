@@ -1,13 +1,15 @@
 {%- comment -%}
-  Rejilla bento de servicios (_data/services.yml).
+  Rejilla bento de servicios (_data/services.yml), cada tarjeta con su foto.
   Uso: {% include service-cards.html %}  (portada, textos cortos)
        {% include service-cards.html full=true %}  (pagina de servicios, textos largos y boton)
 {%- endcomment -%}
 <div class="bento">
   {%- for s in site.data.services %}
-  <article class="card{% if forloop.first %} is-dark span-2{% elsif forloop.last %} is-accent span-2{% endif %}">
-    {% include icon.html name=s.icon class="card-ico" %}
-    {% if include.full %}<h2 class="card-title">{{ s.page_title }}</h2><p>{{ s.long }}</p>{% include wa-button.html class="link" label="Pedir presupuesto →" %}{% else %}<h3>{{ s.title }}</h3><p>{{ s.short }}</p>{% endif %}
+  <article class="card has-photo{% if forloop.first %} is-dark span-2{% elsif forloop.last %} is-accent span-2{% endif %}">
+    <div class="card-photo"><div class="card-photo-img"><img src="{{ '/assets/img/' | append: s.image | relative_url }}" alt="{{ s.image_alt }}" loading="lazy" width="800" height="450"></div>{% include icon.html name=s.icon class="card-ico" %}</div>
+    <div class="card-body">
+      {% if include.full %}<h2 class="card-title">{{ s.page_title }}</h2><p>{{ s.long }}</p>{% include wa-button.html class="link" label="Pedir presupuesto →" %}{% else %}<h3>{{ s.title }}</h3><p>{{ s.short }}</p>{% endif %}
+    </div>
   </article>
   {%- endfor %}
 </div>

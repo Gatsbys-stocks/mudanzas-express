@@ -8,7 +8,8 @@ description: Conoce nuestros camiones y furgonetas para mudanzas desde Barcelona
 ---
 <section class="section">
   <div class="wrap">
-    <div class="gallery">
+    {% include pano.html %}
+    <div class="gallery mt">
       {%- for photo in site.data.fleet %}
       {% include figure.html src=photo.image alt=photo.alt caption=photo.caption %}
       {%- endfor %}

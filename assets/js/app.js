@@ -45,7 +45,7 @@
 
 /* ---------- Aparicion al hacer scroll ---------- */
 (function () {
-  var SELECTOR = ".sec-head, .bento .card, .grid-3 > .card, .steps li, .route, .gallery figure, .faq, .cta-panel, " +
+  var SELECTOR = ".sec-head, .bento .card, .grid-3 > .card, .steps li, .route, .pano, .gallery figure, .faq, .cta-panel, " +
     ".split > *, .strip-grid > div, .wa-card, .form, .checks.two";
   var items = [].slice.call(document.querySelectorAll(SELECTOR));
   var reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
@@ -66,6 +66,59 @@
     });
   }, { rootMargin: "0px 0px -8% 0px", threshold: 0.08 });
   items.forEach(function (el) { io.observe(el); });
+})();
+
+/* ---------- Fotos ampliables (figure[data-lightbox]) ---------- */
+(function () {
+  var figs = [].slice.call(document.querySelectorAll("figure[data-lightbox]"));
+  if (!figs.length || typeof HTMLDialogElement === "undefined") return;
+
+  var dlg = document.createElement("dialog");
+  dlg.className = "lightbox";
+  dlg.setAttribute("aria-label", "Foto ampliada");
+  var img = document.createElement("img");
+  var cap = document.createElement("p");
+  function button(cls, label, text) {
+    var b = document.createElement("button");
+    b.type = "button"; b.className = "lb-btn " + cls; b.setAttribute("aria-label", label); b.textContent = text;
+    return b;
+  }
+  var prev = button("lb-prev", "Foto anterior", "\u2039");
+  var next = button("lb-next", "Foto siguiente", "\u203A");
+  var close = button("lb-close", "Cerrar", "\u00D7");
+  [img, cap, prev, next, close].forEach(function (el) { dlg.appendChild(el); });
+  document.body.appendChild(dlg);
+
+  var index = 0;
+  function show(i) {
+    index = (i + figs.length) % figs.length;
+    var src = figs[index].querySelector("img");
+    var text = figs[index].querySelector("figcaption");
+    img.src = src.currentSrc || src.src;
+    img.alt = src.alt;
+    cap.textContent = text ? text.textContent : src.alt;
+    var many = figs.length > 1;
+    prev.hidden = next.hidden = !many;
+  }
+  function open(i) { show(i); if (!dlg.open) dlg.showModal(); }
+
+  figs.forEach(function (fig, i) {
+    fig.setAttribute("tabindex", "0");
+    fig.setAttribute("role", "button");
+    fig.setAttribute("aria-label", "Ampliar foto");
+    fig.addEventListener("click", function () { open(i); });
+    fig.addEventListener("keydown", function (e) {
+      if (e.key === "Enter" || e.key === " ") { e.preventDefault(); open(i); }
+    });
+  });
+  prev.addEventListener("click", function () { show(index - 1); });
+  next.addEventListener("click", function () { show(index + 1); });
+  close.addEventListener("click", function () { dlg.close(); });
+  dlg.addEventListener("click", function (e) { if (e.target === dlg) dlg.close(); });
+  dlg.addEventListener("keydown", function (e) {
+    if (e.key === "ArrowLeft") show(index - 1);
+    if (e.key === "ArrowRight") show(index + 1);
+  });
 })();
 
 /* ---------- Año del copyright ---------- */
