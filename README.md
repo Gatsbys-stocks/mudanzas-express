@@ -55,23 +55,4 @@ La cabecera, el pie, el menú y los botones de WhatsApp se escriben **una sola v
 | Colores (claro y oscuro) | variables al principio de `_sass/base.scss` (bloque `:root` = claro, `dark-tokens` = oscuro) |
 | Tipografías | `_sass/base.scss`; las fuentes se cargan desde Google Fonts en `_includes/head.html` |
 
-## Publicar en GitHub Pages
-1. Crea un repositorio y sube **todo el contenido** de esta carpeta a la raíz.
-2. **Settings → Pages → Build and deployment → Source: Deploy from a branch → Branch `main` / `(root)` → Save.**
-3. Tarda 1–2 minutos en compilar.
 
-### Con dominio propio (mudanzasexpressbcn.es)
-1. **Settings → Pages → Custom domain**: `mudanzasexpressbcn.es` → Save (GitHub crea el archivo `CNAME`).
-2. En el DNS del dominio añade 4 registros **A** (host `@`) a `185.199.108.153`, `185.199.109.153`, `185.199.110.153`, `185.199.111.153` y un **CNAME** (host `www`) a `TU-USUARIO.github.io`.
-3. Cuando GitHub lo verifique, activa **Enforce HTTPS**.
-
-### Sin dominio propio (https://USUARIO.github.io/REPO)
-Edita `_config.yml` y pon `baseurl: "/REPO"` (con el nombre real del repositorio). Con dominio propio déjalo vacío (`baseurl: ""`).
-
-## Probarlo en tu ordenador (opcional)
-Necesita Ruby. Desde la carpeta:
-```
-bundle install
-bundle exec jekyll serve
-```
-y abre http://localhost:4000. (Las páginas no se ven bien abriendo los `.html` con doble clic: hay que compilarlas.)
