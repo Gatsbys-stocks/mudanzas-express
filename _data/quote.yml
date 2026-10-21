@@ -1,0 +1,16 @@
+# Datos que conviene enviar para el presupuesto (página de mudanzas)
+needed:
+  - Dirección o localidad de origen y de destino
+  - Fecha aproximada de la mudanza
+  - Tipo de vivienda u oficina y volumen aproximado
+  - Plantas y si hay ascensor en origen y destino
+  - Si necesitas desmontaje y montaje de muebles
+  - Fotos de lo que hay que trasladar, si es posible
+# Opciones del desplegable del formulario de contacto
+types:
+  - Vivienda (piso, casa)
+  - Oficina, local o empresa
+  - Transporte de muebles o electrodomésticos
+  - Desmontaje y montaje de muebles
+  - Vaciado de piso, casa, oficina o local
+  - Mudanza internacional

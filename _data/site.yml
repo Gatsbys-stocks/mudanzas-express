@@ -1,0 +1,13 @@
+# Datos generales de la empresa. El número de WhatsApp se cambia SOLO aquí.
+name: Mudanzas Express BCN
+domain: mudanzasexpressbcn.es
+base_city: Barcelona
+# Formato internacional, sin "+" ni espacios
+whatsapp: "34672303715"
+whatsapp_display: "+34 672 30 37 15"
+whatsapp_message: "Hola, quiero pedir presupuesto para una mudanza."
+tagline: "Mudanzas para particulares y empresas en toda España y a Francia, Alemania y Portugal. Base en Barcelona."
+# Estadisticas de visitas (GoatCounter). Dejalo vacio para desactivarlas.
+goatcounter: "https://9-s.goatcounter.com/count"
+# Firma de copyright del pie de pagina
+studio: "9's Studio"

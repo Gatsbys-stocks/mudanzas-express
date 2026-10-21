@@ -1,0 +1,43 @@
+---
+layout: page
+title: Contacto y presupuesto
+crumb: Contacto
+permalink: /contacto/
+lead: La forma más rápida de pedir presupuesto es por WhatsApp. Rellena el formulario y se abrirá la conversación con tu mensaje listo para enviar.
+description: Solicita presupuesto de mudanza directamente por WhatsApp. Base en Barcelona, servicio en toda España, Francia, Alemania y Portugal.
+quote_form: true
+---
+<section class="section">
+  <div class="wrap contact-grid">
+    <div class="wa-card">
+      {% include whatsapp-icon.html %}
+      <h2>Escríbenos por WhatsApp</h2>
+      <p>Respuesta directa y sin formularios largos. Puedes adjuntar fotos de lo que hay que trasladar.</p>
+      {% include wa-button.html class="btn btn-wa btn-lg" label="Abrir WhatsApp" %}
+      <p class="wa-number">{{ site.data.site.whatsapp_display }}</p>
+      <hr>
+      <p><strong>Zona de trabajo</strong><br>Base en Barcelona · toda España · Francia, Alemania y Portugal</p>
+    </div>
+    <form id="quote" class="form" data-quote data-whatsapp="{{ site.data.site.whatsapp }}" novalidate>
+      <h2>Solicitar presupuesto</h2>
+      <p class="muted">Al enviar se abre WhatsApp con tus datos. No guardamos nada en esta página.</p>
+      <label>Nombre<input id="f-nombre" name="nombre" required autocomplete="name"></label>
+      <label>Tipo de mudanza
+        <select id="f-tipo" name="tipo" required>
+          <option value="">Selecciona…</option>
+          {%- for t in site.data.quote.types %}
+          <option>{{ t }}</option>
+          {%- endfor %}
+        </select>
+      </label>
+      <div class="two-col">
+        <label>Origen<input id="f-origen" name="origen" placeholder="Ciudad o código postal" required></label>
+        <label>Destino<input id="f-destino" name="destino" placeholder="Ciudad, código postal o país" required></label>
+      </div>
+      <label>Fecha aproximada<input id="f-fecha" type="date" name="fecha"></label>
+      <label>Cuéntanos más<textarea id="f-mensaje" name="mensaje" rows="4" placeholder="Plantas, ascensor, muebles a desmontar, volumen aproximado…"></textarea></label>
+      <p class="err" role="alert" hidden>Rellena nombre, tipo de mudanza, origen y destino.</p>
+      <button class="btn btn-wa btn-lg" type="submit">{% include whatsapp-icon.html %}<span>Enviar por WhatsApp</span></button>
+    </form>
+  </div>
+</section>

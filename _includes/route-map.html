@@ -1,0 +1,9 @@
+<div class="route" role="img" aria-label="Desde Barcelona: toda España, Francia, Alemania y Portugal">
+  <div class="route-hub">{% include icon.html name="map" class="route-ico" %}<strong>Barcelona</strong><span>Nuestra base</span></div>
+  <ul class="route-list">
+    <li class="route-main"><span class="route-name">España</span><span class="route-tag">Toda España</span></li>
+    {%- for c in site.data.countries %}
+    <li><span class="route-name">{{ c.flag }} {{ c.name }}</span><span class="route-tag">Internacional</span></li>
+    {%- endfor %}
+  </ul>
+</div>

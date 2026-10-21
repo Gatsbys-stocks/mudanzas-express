@@ -1,0 +1,31 @@
+# short = texto de la tarjeta (portada) - long = texto de la página de servicios
+- icon: home
+  title: Mudanzas de viviendas
+  short: Mudanzas de pisos, casas y todo tipo de viviendas, con camión y personal adaptados al volumen de tu mudanza.
+  page_title: Mudanzas de pisos, casas y todo tipo de viviendas
+  long: Trasladamos tu hogar, sea un piso pequeño o una casa grande. Aportamos el camión y el personal que tu mudanza necesita.
+- icon: building
+  title: Mudanzas de oficinas y empresas
+  short: Traslado de oficinas, locales y empresas. Planificamos el servicio para que tu actividad se vea afectada lo menos posible.
+  page_title: Mudanzas de oficinas, locales y empresas
+  long: Trasladamos oficinas, locales y empresas. Coordinamos contigo el servicio para que el cambio sea ordenado.
+- icon: sofa
+  title: Transporte de muebles y electrodomésticos
+  short: Transportamos muebles y electrodomésticos, tanto en una mudanza completa como en servicios sueltos.
+  page_title: Transporte de muebles y electrodomésticos
+  long: ¿No necesitas una mudanza completa? Transportamos muebles y electrodomésticos de un punto a otro.
+- icon: tools
+  title: Desmontaje y montaje de muebles
+  short: Desmontamos tus muebles antes del traslado y los montamos de nuevo en el destino.
+  page_title: Desmontaje y montaje de muebles
+  long: Desmontamos los muebles antes de cargarlos y los volvemos a montar en tu nueva vivienda o local.
+- icon: box
+  title: Vaciado de pisos, casas, oficinas y locales
+  short: Vaciamos viviendas y locales. Nuestro personal ayuda con la carga, la descarga y la retirada de los objetos que corresponda.
+  page_title: Vaciado de pisos, casas, oficinas y locales
+  long: Vaciamos viviendas, oficinas y locales. Contamos con personal que puede ayudar con la carga, la descarga y la retirada de los objetos que corresponda.
+- icon: users
+  title: Particulares y empresas
+  short: Atendemos tanto a particulares como a empresas, con el mismo trato cercano y profesional.
+  page_title: Mudanzas para particulares y empresas
+  long: Tanto si eres un particular como una empresa, adaptamos el servicio a lo que necesitas.

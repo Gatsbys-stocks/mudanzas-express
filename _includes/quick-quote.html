@@ -1,0 +1,22 @@
+<section class="quick">
+  <div class="wrap">
+    <form class="quick-card" data-quote data-whatsapp="{{ site.data.site.whatsapp }}" novalidate>
+      <div class="quick-intro">
+        <h2>Pide tu presupuesto</h2>
+        <p>Cuéntanos de dónde a dónde y se abrirá WhatsApp con tu mensaje listo.</p>
+      </div>
+      <label>Tipo de mudanza
+        <select id="q-tipo" name="tipo" required>
+          <option value="">Selecciona…</option>
+          {%- for t in site.data.quote.types %}
+          <option>{{ t }}</option>
+          {%- endfor %}
+        </select>
+      </label>
+      <label>Origen<input id="q-origen" name="origen" placeholder="Ciudad o código postal" required></label>
+      <label>Destino<input id="q-destino" name="destino" placeholder="Ciudad o país" required></label>
+      <button class="btn btn-wa btn-lg" type="submit">{% include whatsapp-icon.html %}<span>Enviar por WhatsApp</span></button>
+      <p class="err" role="alert" hidden>Elige el tipo de mudanza e indica origen y destino.</p>
+    </form>
+  </div>
+</section>

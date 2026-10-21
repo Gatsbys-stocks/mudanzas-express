@@ -1,0 +1,4 @@
+# Fotos de la flota. La primera se usa también en la portada.
+- { image: flota/furgoneta-frontal.jpg, alt: "Furgoneta de gran volumen, vista frontal", caption: Furgoneta de gran volumen }
+- { image: flota/furgoneta-interior.jpg, alt: Interior de carga de la furgoneta, caption: Zona de carga }
+- { image: flota/furgoneta-trasera.jpg, alt: "Furgoneta de gran volumen, vista trasera", caption: Furgoneta de gran volumen }

@@ -1,0 +1,30 @@
+<footer class="site-footer">
+  <div class="wrap foot-grid">
+    <div>
+      <a class="logo logo-light" href="{{ '/' | relative_url }}">{% include icon.html name="truck" class="logo-ico" %}<span>{{ site.data.site.name }}</span></a>
+      <p>{{ site.data.site.tagline }}</p>
+    </div>
+    <div>
+      <h3>Páginas</h3>
+      <ul>
+        {%- for item in site.data.navigation %}
+        <li><a href="{{ item.url | relative_url }}">{{ item.title }}</a></li>
+        {%- endfor %}
+      </ul>
+    </div>
+    <div>
+      <h3>Servicios</h3>
+      <ul>
+        {%- for s in site.data.services %}
+        <li><a href="{{ '/servicios/' | relative_url }}">{{ s.title }}</a></li>
+        {%- endfor %}
+      </ul>
+    </div>
+    <div>
+      <h3>Presupuesto</h3>
+      <p>Solicítalo por WhatsApp:<br><strong class="phone">{{ site.data.site.whatsapp_display }}</strong></p>
+      {% include wa-button.html class="btn btn-wa btn-sm" label="Abrir WhatsApp" %}
+    </div>
+  </div>
+  <div class="wrap legal"><p>© <span id="year">{{ site.time | date: "%Y" }}</span> {{ site.data.site.studio }}. All rights reserved.</p></div>
+</footer>

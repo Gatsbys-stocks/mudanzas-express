@@ -1,0 +1,13 @@
+{%- comment -%}
+  Rejilla bento de servicios (_data/services.yml).
+  Uso: {% include service-cards.html %}  (portada, textos cortos)
+       {% include service-cards.html full=true %}  (pagina de servicios, textos largos y boton)
+{%- endcomment -%}
+<div class="bento">
+  {%- for s in site.data.services %}
+  <article class="card{% if forloop.first %} is-dark span-2{% elsif forloop.last %} is-accent span-2{% endif %}">
+    {% include icon.html name=s.icon class="card-ico" %}
+    {% if include.full %}<h2 class="card-title">{{ s.page_title }}</h2><p>{{ s.long }}</p>{% include wa-button.html class="link" label="Pedir presupuesto →" %}{% else %}<h3>{{ s.title }}</h3><p>{{ s.short }}</p>{% endif %}
+  </article>
+  {%- endfor %}
+</div>

@@ -1,0 +1,16 @@
+title: Mudanzas Express BCN
+url: "https://mudanzasexpressbcn.es"
+# Si publicas SIN dominio propio en https://USUARIO.github.io/REPO, pon aquí: baseurl: "/REPO"
+baseurl: ""
+lang: es
+timezone: Europe/Madrid
+
+sass:
+  style: compressed
+
+exclude:
+  - README.md
+  - Gemfile
+  - Gemfile.lock
+  - vendor
+  - node_modules

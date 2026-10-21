@@ -1,0 +1,34 @@
+---
+layout: page
+title: Sobre nosotros
+crumb: Empresa
+permalink: /empresa/
+lead: "Mudanzas Express BCN es una empresa de mudanzas con base en Barcelona que trabaja en toda España y a Francia, Alemania y Portugal."
+description: Empresa de mudanzas con base en Barcelona. Camiones y personal para mudanzas de particulares y empresas en España, Francia, Alemania y Portugal.
+---
+<section class="section">
+  <div class="wrap split">
+    <div>
+      <h2>Una empresa de mudanzas cercana y profesional</h2>
+      <p>Nos dedicamos a hacer más fácil el momento de cambiar de casa, de oficina o de local. Disponemos de camiones propios y de un equipo de personal para realizar diferentes tipos de mudanzas, desde un piso hasta una empresa entera.</p>
+      <p>Trabajamos en toda España, con base en Barcelona, y también realizamos mudanzas internacionales a Francia, Alemania y Portugal.</p>
+      <ul class="checks">
+        <li>Mudanzas para particulares y empresas</li>
+        <li>Camiones y personal propios</li>
+        <li>Servicio en toda España y a tres países europeos</li>
+        <li>Presupuesto rápido por WhatsApp</li>
+      </ul>
+    </div>
+    <div>{% include figure.html src="flota/furgoneta-frontal.jpg" alt="Furgoneta de la empresa" %}</div>
+  </div>
+</section>
+<section class="section alt">
+  <div class="wrap">
+    <div class="sec-head"><p class="eyebrow">Cómo trabajamos</p><h2>Lo que nos importa</h2></div>
+    <div class="grid grid-3">
+      {%- for v in site.data.values %}
+      <article class="card">{% include icon.html name=v.icon class="card-ico" %}<h3>{{ v.title }}</h3><p>{{ v.text }}</p></article>
+      {%- endfor %}
+    </div>
+  </div>
+</section>

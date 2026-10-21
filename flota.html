@@ -1,0 +1,24 @@
+---
+layout: page
+title: Nuestra flota
+crumb: Flota
+permalink: /flota/
+lead: Disponemos de camiones y de personal para realizar diferentes tipos de mudanzas.
+description: Conoce nuestros camiones y furgonetas para mudanzas desde Barcelona.
+---
+<section class="section">
+  <div class="wrap">
+    <div class="gallery">
+      {%- for photo in site.data.fleet %}
+      {% include figure.html src=photo.image alt=photo.alt caption=photo.caption %}
+      {%- endfor %}
+    </div>
+  </div>
+</section>
+<section class="section alt">
+  <div class="wrap narrow center">
+    {% include icon.html name="truck" class="card-ico" %}
+    <h2>El vehículo y el equipo adecuados para cada mudanza</h2>
+    <p>Elegimos los medios según el tipo de servicio, ya sea una vivienda, una oficina, un vaciado o el transporte de unos muebles.</p>
+  </div>
+</section>

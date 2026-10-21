@@ -1,0 +1,101 @@
+---
+layout: default
+title: Inicio
+permalink: /
+seo_title: "Mudanzas Express BCN | Mudanzas en Barcelona, toda España, Francia, Alemania y Portugal"
+description: "Mudanzas de pisos, casas, oficinas y empresas en toda España, con base en Barcelona, y mudanzas internacionales a Francia, Alemania y Portugal. Pide presupuesto por WhatsApp."
+---
+<section class="hero">
+  <div class="wrap hero-grid">
+    <div class="hero-text">
+      <p class="pill"><span class="dot"></span>Base en Barcelona · toda España</p>
+      <h1>Mudanzas en Barcelona, <span class="mark">toda España</span> y Europa</h1>
+      <p class="lead">Mudanzas de pisos, casas, oficinas y empresas, con camiones y personal propios. Servicio internacional a Francia, Alemania y Portugal.</p>
+      <div class="hero-actions">
+        {% include wa-button.html class="btn btn-wa btn-lg" label="Pedir presupuesto por WhatsApp" %}
+        <a class="btn btn-outline btn-lg" href="{{ '/servicios/' | relative_url }}">Ver servicios</a>
+      </div>
+      <ul class="hero-points">
+        <li>{% include icon.html name="check" class="mini" %} Particulares y empresas</li>
+        <li>{% include icon.html name="check" class="mini" %} Presupuesto por WhatsApp</li>
+      </ul>
+    </div>
+    <div class="hero-media">
+      <img class="hero-main" src="{{ '/assets/img/flota/furgoneta-frontal.jpg' | relative_url }}" alt="Furgoneta de gran volumen de la empresa" width="1080" height="810">
+      <img class="hero-sub" src="{{ '/assets/img/flota/furgoneta-interior.jpg' | relative_url }}" alt="Interior de carga de la furgoneta" width="1080" height="810" loading="lazy">
+      <div class="hero-chip">{% include icon.html name="globe" class="mini" %}<span><strong>Mudanzas internacionales</strong>Francia · Alemania · Portugal</span></div>
+    </div>
+  </div>
+</section>
+
+{% include quick-quote.html %}
+
+<section class="strip">
+  <div class="wrap strip-grid">
+    {%- for item in site.data.highlights %}
+    <div>{% include icon.html name=item.icon class="strip-ico" %}<span><strong>{{ item.title }}</strong>{{ item.text }}</span></div>
+    {%- endfor %}
+  </div>
+</section>
+
+<section class="section">
+  <div class="wrap">
+    <div class="sec-head">
+      <p class="eyebrow">Servicios</p>
+      <h2>Todo lo que necesitas para tu mudanza</h2>
+      <p>Desde un piso hasta una oficina completa: nos encargamos del traslado y de lo que hay alrededor.</p>
+    </div>
+    {% include service-cards.html %}
+    <p class="center mt"><a class="btn btn-dark" href="{{ '/servicios/' | relative_url }}">Ver todos los servicios</a></p>
+  </div>
+</section>
+
+<section class="section alt">
+  <div class="wrap">
+    <div class="sec-head">
+      <p class="eyebrow">Así de sencillo</p>
+      <h2>Pide tu presupuesto en tres pasos</h2>
+    </div>
+    <ol class="steps">
+      {%- for step in site.data.steps %}
+      <li><span class="num">{{ forloop.index }}</span><h3>{{ step.title }}</h3><p>{{ step.text }}</p></li>
+      {%- endfor %}
+    </ol>
+    <p class="center mt">{% include wa-button.html class="btn btn-wa" label="Empezar por WhatsApp" %}</p>
+  </div>
+</section>
+
+<section class="section">
+  <div class="wrap split">
+    <div>
+      <p class="eyebrow">Dónde trabajamos</p>
+      <h2>Desde Barcelona a toda España y Europa</h2>
+      <p>Nuestra base está en Barcelona y realizamos mudanzas en toda España. Además, organizamos mudanzas internacionales a tres países:</p>
+      <ul class="flags">
+        {%- for c in site.data.countries %}
+        <li>{{ c.flag }} {{ c.name }}</li>
+        {%- endfor %}
+      </ul>
+      <a class="btn btn-outline" href="{{ '/mudanzas/' | relative_url }}">Mudanzas nacionales e internacionales</a>
+    </div>
+    <div>{% include route-map.html %}</div>
+  </div>
+</section>
+
+<section class="section alt">
+  <div class="wrap">
+    <div class="sec-head">
+      <p class="eyebrow">Nuestra flota</p>
+      <h2>Vehículos y equipo a tu servicio</h2>
+      <p>Disponemos de camiones y de personal para distintos tipos de mudanzas.</p>
+    </div>
+    <div class="gallery gallery--2">
+      {%- for photo in site.data.fleet offset: 1 %}
+      {% include figure.html src=photo.image alt=photo.alt %}
+      {%- endfor %}
+    </div>
+    <p class="center mt"><a class="btn btn-outline" href="{{ '/flota/' | relative_url }}">Ver la flota</a></p>
+  </div>
+</section>
+
+{% include faq.html %}

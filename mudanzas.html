@@ -1,0 +1,54 @@
+---
+layout: page
+title: Mudanzas nacionales e internacionales
+crumb: Nacionales e internacionales
+permalink: /mudanzas/
+lead: Con base en Barcelona, trabajamos en toda España y realizamos mudanzas a Francia, Alemania y Portugal.
+description: Mudanzas en toda España desde Barcelona y mudanzas internacionales a Francia, Alemania y Portugal. Pide presupuesto por WhatsApp.
+---
+<section class="section">
+  <div class="wrap split">
+    <div>
+      {% include icon.html name="map" class="card-ico" %}
+      <h2>Mudanzas nacionales</h2>
+      <p>Trabajamos en <strong>toda España</strong>. Nuestra base está en Barcelona, pero nos desplazamos con nuestros camiones y nuestro personal allí donde esté tu mudanza.</p>
+      <ul class="checks">
+        <li>Mudanzas dentro de Barcelona y su área</li>
+        <li>Mudanzas entre ciudades de España</li>
+        <li>Viviendas, oficinas, locales y empresas</li>
+        <li>Transporte de muebles y electrodomésticos</li>
+      </ul>
+    </div>
+    <div>{% include route-map.html %}</div>
+  </div>
+</section>
+
+<section class="section alt">
+  <div class="wrap">
+    <div class="sec-head">
+      {% include icon.html name="globe" class="card-ico" %}
+      <h2>Mudanzas internacionales</h2>
+      <p>Realizamos mudanzas internacionales a tres destinos en Europa.</p>
+    </div>
+    <div class="grid grid-3">
+      {%- for c in site.data.countries %}
+      <article class="card country"><span class="flag">{{ c.flag }}</span><h3>Mudanzas a {{ c.name }}</h3><p>Organizamos tu mudanza con destino {{ c.name }} desde Barcelona y desde cualquier punto de España.</p>{% include wa-button.html class="link" label="Consultar por WhatsApp →" %}</article>
+      {%- endfor %}
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="wrap narrow">
+    <div class="sec-head">
+      <h2>¿Qué datos necesitamos para el presupuesto?</h2>
+      <p>Cuantos más detalles nos des, más ajustado será el presupuesto.</p>
+    </div>
+    <ul class="checks two">
+      {%- for item in site.data.quote.needed %}
+      <li>{{ item }}</li>
+      {%- endfor %}
+    </ul>
+    <p class="center mt">{% include wa-button.html class="btn btn-wa btn-lg" label="Enviar datos por WhatsApp" %}</p>
+  </div>
+</section>

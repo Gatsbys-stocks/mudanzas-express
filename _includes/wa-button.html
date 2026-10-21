@@ -1,0 +1,5 @@
+{%- comment -%}
+  Enlace a WhatsApp con el número de _data/site.yml.
+  Uso: {% include wa-button.html class="btn btn-wa btn-lg" label="Pedir presupuesto" %}
+{%- endcomment -%}
+<a class="{{ include.class }}" href="https://wa.me/{{ site.data.site.whatsapp }}?text={{ site.data.site.whatsapp_message | uri_escape }}" target="_blank" rel="noopener"{% if include.aria %} aria-label="{{ include.aria }}"{% endif %}>{% include whatsapp-icon.html %}<span>{{ include.label }}</span></a>
