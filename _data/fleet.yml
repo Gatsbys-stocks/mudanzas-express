@@ -1,7 +1,7 @@
-# Fotos de la galeria de la flota (la panoramica se usa aparte en la portada y en Flota).
+# Galeria de la pagina Flota. Para usar fotos reales del cliente: sustituye el archivo en assets/img/flota/ (mismo nombre) o cambia "image".
 - { image: flota/camion-rampa-sillon.webp, alt: "Camión con la rampa bajada y un sillón en la zona de carga", caption: Camión con rampa de carga }
-- { image: flota/furgoneta-interior-trasera.webp, alt: Interior de una furgoneta de gran volumen visto desde atrás, caption: Furgoneta de gran volumen }
+- { image: flota/furgoneta-cajas.webp, alt: "Furgoneta blanca con las puertas traseras abiertas y cajas cargadas", caption: Furgoneta con la carga asegurada }
 - { image: flota/camion-carga.webp, alt: "Camión cargado con cajas, una planta y un mueble embalado", caption: Carga asegurada con cinchas }
-- { image: flota/furgoneta-lateral.webp, alt: Furgoneta de gran volumen vista de lado, caption: Vista lateral de la furgoneta }
-- { image: flota/camion-blanco-lateral.webp, alt: Camión blanco con caja cerrada en una calle de Barcelona, caption: Camión con caja cerrada }
-- { image: flota/camion-rampa.webp, alt: "Camión abierto con cajas y un mueble protegido, y una rampa", caption: Camión abierto con rampa }
+- { image: flota/furgoneta-cajas-apiladas.webp, alt: "Cajas de cartón apiladas dentro de una furgoneta blanca", caption: Cajas bien apiladas }
+- { image: flota/camion-blanco-lateral.webp, alt: "Camión blanco con caja cerrada en una calle de Barcelona", caption: Camión con caja cerrada }
+- { image: flota/furgoneta-interior-trasera.webp, alt: "Interior de una furgoneta de gran volumen visto desde atrás", caption: Furgoneta de gran volumen }
