@@ -1,0 +1,9 @@
+---
+permalink: /sitemap.xml
+---
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+{%- for p in site.pages %}{% if p.layout and p.sitemap != false %}
+  <url><loc>{{ p.url | absolute_url }}</loc><lastmod>{{ site.time | date_to_xmlschema }}</lastmod></url>
+{%- endif %}{% endfor %}
+</urlset>

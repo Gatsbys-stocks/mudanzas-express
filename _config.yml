@@ -1,5 +1,7 @@
 title: Mudanzas Express BCN
-url: "https://mudanzasexpressbcn.es"
+# Direccion real donde esta publicada la web (la usan Google y las vistas previas al compartir).
+# Cuando pases a mudanzasexpressbcn.es, cambia esta linea por: url: "https://mudanzasexpressbcn.es"
+url: "https://mudanzas.daylli9s.site"
 # Si publicas SIN dominio propio en https://USUARIO.github.io/REPO, pon aquí: baseurl: "/REPO"
 baseurl: ""
 lang: es
