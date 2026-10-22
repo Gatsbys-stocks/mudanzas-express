@@ -1,7 +1,7 @@
 # Galeria de la pagina Flota. Para usar fotos reales del cliente: sustituye el archivo en assets/img/flota/ (mismo nombre) o cambia "image".
-- { image: flota/camion-rampa-sillon.webp, alt: "Camión con la rampa bajada y un sillón en la zona de carga", caption: Camión con rampa de carga }
+- { image: flota/camion-calle-bcn.webp, alt: "Camión blanco de caja cerrada aparcado en una calle de Barcelona", caption: Camión de caja cerrada }
+- { image: flota/camion-abierto-rampa.webp, alt: "Camión con la puerta trasera abierta y la rampa bajada, con muebles y cajas dentro", caption: Camión con rampa de carga }
+- { image: flota/interior-camion.webp, alt: "Interior de un camión con mantas protectoras, carretilla y cinchas", caption: Mantas y cinchas para proteger la carga }
+- { image: flota/flota-deposito.webp, alt: "Un camión de caja y una furgoneta grande aparcados juntos al amanecer", caption: Camión y furgoneta de gran volumen }
+- { image: flota/camion-palmera.webp, alt: "Camión blanco de caja junto a un edificio blanco con una palmera", caption: Camión blanco de caja }
 - { image: flota/furgoneta-cajas.webp, alt: "Furgoneta blanca con las puertas traseras abiertas y cajas cargadas", caption: Furgoneta con la carga asegurada }
-- { image: flota/camion-carga.webp, alt: "Camión cargado con cajas, una planta y un mueble embalado", caption: Carga asegurada con cinchas }
-- { image: flota/furgoneta-cajas-apiladas.webp, alt: "Cajas de cartón apiladas dentro de una furgoneta blanca", caption: Cajas bien apiladas }
-- { image: flota/camion-blanco-lateral.webp, alt: "Camión blanco con caja cerrada en una calle de Barcelona", caption: Camión con caja cerrada }
-- { image: flota/furgoneta-interior-trasera.webp, alt: "Interior de una furgoneta de gran volumen visto desde atrás", caption: Furgoneta de gran volumen }

@@ -81,5 +81,5 @@ y abre http://localhost:4000. (Las páginas no se ven bien abriendo los `.html` 
 
 ## Créditos de las fotos
 Las fotos de la portada y de los servicios son de [Pexels](https://www.pexels.com) (licencia Pexels: uso comercial libre, sin atribución obligatoria): 
-18602897 (portada), 31405655 (portada móvil), 18602895 (Barcelona), 7217785, 7464676, 7218131, 7464703, 7218678, 7464495, 7217852, 7843996 y 7843987 (estas dos últimas, `furgoneta-cajas*`, son de furgonetas de reparto, no de mudanza).
-Las demás fotos de la flota (`camion-*`, `furgoneta-interior-trasera`, `flota-panoramica`) son imágenes generadas con IA: sustitúyelas por fotos reales de los vehículos del cliente.
+18602897 (portada), 31405655 (portada móvil), 18602895 (Barcelona), 7217785, 7464676, 7218131, 7464703, 7218678, 7464495, 7217852, 7843996 (`furgoneta-cajas`, furgoneta de reparto) y 20121597 (`camion-palmera`).
+Las demás fotos de la flota (`camion-calle-bcn`, `camion-abierto-rampa`, `interior-camion`, `flota-deposito`, `flota-panoramica`) son imágenes generadas con IA: sustitúyelas por fotos reales de los vehículos del cliente.
