@@ -4,40 +4,40 @@
   short: Mudanzas de pisos, casas y todo tipo de viviendas, con camión y personal adaptados al volumen de tu mudanza.
   page_title: Mudanzas de pisos, casas y todo tipo de viviendas
   long: Trasladamos tu hogar, sea un piso pequeño o una casa grande. Aportamos el camión y el personal que tu mudanza necesita.
-  image: flota/salon-protegido.webp
-  image_alt: "Salón con muebles protegidos con film antes de una mudanza"
-  focus: "40% 50%"
+  image: flota/viviendas.webp
+  image_alt: "Dos personas moviendo un sofá gris en un salón durante una mudanza"
+  focus: "70% 50%"
 - icon: building
   title: Mudanzas de oficinas y empresas
   short: Traslado de oficinas, locales y empresas. Planificamos el servicio para que tu actividad se vea afectada lo menos posible.
   page_title: Mudanzas de oficinas, locales y empresas
   long: Trasladamos oficinas, locales y empresas. Coordinamos contigo el servicio para que el cambio sea ordenado.
   image: flota/oficina.webp
-  image_alt: "Oficina con cajas preparadas para trasladar"
-  focus: "55% 50%"
+  image_alt: "Operario cargando una caja marcada como oficina durante un traslado"
+  focus: "50% 50%"
 - icon: sofa
   title: Transporte de muebles y electrodomésticos
   short: Transportamos muebles y electrodomésticos, tanto en una mudanza completa como en servicios sueltos.
   page_title: Transporte de muebles y electrodomésticos
   long: ¿No necesitas una mudanza completa? Transportamos muebles y electrodomésticos de un punto a otro.
-  image: flota/ascensor-carretilla.webp
-  image_alt: "Mueble protegido y atado sobre una carretilla junto al ascensor"
-  focus: "62% 50%"
+  image: flota/transporte.webp
+  image_alt: "Dos operarios transportando un sofá de terciopelo verde dentro de una vivienda"
+  focus: "55% 50%"
 - icon: tools
   title: Desmontaje y montaje de muebles
   short: Desmontamos tus muebles antes del traslado y los montamos de nuevo en el destino.
   page_title: Desmontaje y montaje de muebles
   long: Desmontamos los muebles antes de cargarlos y los volvemos a montar en tu nueva vivienda o local.
   image: flota/desmontaje.webp
-  image_alt: "Dos operarios desmontando un armario en un dormitorio"
-  focus: "50% 50%"
+  image_alt: "Hombre llevando una mesa de madera en un salón con un sofá protegido con plástico"
+  focus: "78% 50%"
 - icon: box
   title: Vaciado de pisos, casas, oficinas y locales
   short: Vaciamos viviendas y locales. Nuestro personal ayuda con la carga, la descarga y la retirada de los objetos que corresponda.
   page_title: Vaciado de pisos, casas, oficinas y locales
   long: Vaciamos viviendas, oficinas y locales. Contamos con personal que puede ayudar con la carga, la descarga y la retirada de los objetos que corresponda.
   image: flota/vaciado.webp
-  image_alt: "Dos operarios sacando una cómoda y bolsas de un piso a medio vaciar"
+  image_alt: "Dos operarios sonrientes con cajas de cartón en un piso luminoso"
   focus: "50% 50%"
 - icon: users
   title: Particulares y empresas
@@ -45,5 +45,5 @@
   page_title: Mudanzas para particulares y empresas
   long: Tanto si eres un particular como una empresa, adaptamos el servicio a lo que necesitas.
   image: flota/particulares.webp
-  image_alt: "Un salón con un sillón protegido y una oficina con cajas: particulares y empresas"
+  image_alt: "Una pareja con cajas de mudanza y una persona etiquetando cajas de oficina: particulares y empresas"
   focus: "50% 50%"

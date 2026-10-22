@@ -78,3 +78,8 @@ bundle install
 bundle exec jekyll serve
 ```
 y abre http://localhost:4000. (Las páginas no se ven bien abriendo los `.html` con doble clic: hay que compilarlas.)
+
+## Créditos de las fotos
+Las fotos de la portada y de los servicios son de [Pexels](https://www.pexels.com) (licencia Pexels: uso comercial libre, sin atribución obligatoria): 
+18602897 (portada), 31405655 (portada móvil), 18602895 (Barcelona), 7217785, 7464676, 7218131, 7464703, 7218678, 7464495 y 7217852. 
+Las fotos de la flota (`camion-*`, `furgoneta-*`, `flota-panoramica`) son imágenes generadas con IA: sustitúyelas por fotos reales de los vehículos del cliente.
