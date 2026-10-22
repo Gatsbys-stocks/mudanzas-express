@@ -43,18 +43,3 @@ index.html · servicios.html · mudanzas.html · flota.html · empresa.html · c
 ```
 
 La cabecera, el pie, el menú y los botones de WhatsApp se escriben **una sola vez** y se reutilizan en todas las páginas.
-
-## Cambios habituales
-| Quiero cambiar… | Dónde |
-|---|---|
-| Número de WhatsApp o mensaje inicial | `_data/site.yml` |
-| Nombre de la empresa / dominio | `_data/site.yml` y `_config.yml` |
-| Firma de copyright (pie) / GoatCounter | `studio` y `goatcounter` en `_data/site.yml` (vacio = sin estadisticas) |
-| Servicios | `_data/services.yml` |
-| Preguntas frecuentes | `_data/faq.yml` |
-| Foto grande de la portada | `assets/img/flota/hero.webp` (2000 px), `hero-1000.webp` y `hero-movil.webp` (versión vertical para móvil) |
-| Fotos de la flota y de los servicios | sustituir el archivo en `assets/img/flota/` (mismo nombre) o editar `_data/fleet.yml` / `_data/services.yml`; la panorámica es `flota-panoramica.webp` |
-| Textos de una página | el `.html` de esa página |
-| Colores (claro y oscuro) | variables al principio de `_sass/base.scss` (bloque `:root` = claro, `dark-tokens` = oscuro) |
-| Tipografías | `_sass/base.scss`; las fuentes se cargan desde Google Fonts en `_includes/head.html` |
-
