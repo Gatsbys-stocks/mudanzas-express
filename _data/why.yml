@@ -1,0 +1,10 @@
+# Bloque "Por que elegirnos" de la portada
+intro: Trabajamos con camiones y personal para que cada mudanza, desde un piso hasta una oficina completa, salga bien. Nuestra base está en Barcelona y nos desplazamos por toda España y a Francia, Alemania y Portugal.
+stats:
+  - { icon: globe, number: 3, label: "Países europeos además de España" }
+  - { icon: box, number: 6, label: "Servicios para particulares y empresas" }
+  - { icon: map, number: 1, label: "Base en Barcelona" }
+features:
+  - { icon: truck, title: Camiones y personal, text: "Medios adaptados a cada tipo de mudanza, de un piso a una oficina completa." }
+  - { icon: chat, title: Presupuesto por WhatsApp, text: "Cuéntanos origen, destino y fecha y te respondemos por el mismo chat." }
+  - { icon: globe, title: Toda España y Europa, text: "Con base en Barcelona. Mudanzas a Francia, Alemania y Portugal." }

@@ -13,15 +13,6 @@
 @keyframes pulse{0%{box-shadow:0 12px 30px rgba(0,0,0,.28),0 0 0 0 rgba(37,211,102,.55)}70%{box-shadow:0 12px 30px rgba(0,0,0,.28),0 0 0 16px rgba(37,211,102,0)}100%{box-shadow:0 12px 30px rgba(0,0,0,.28),0 0 0 0 rgba(37,211,102,0)}}
 
 /* Entrada de la portada y de las cabeceras interiores (termina siempre visible) */
-.hero-text>*,.page-head .wrap>*{animation:rise .9s cubic-bezier(.2,.7,.2,1) both}
-.hero-text>:nth-child(1),.page-head .wrap>:nth-child(1){animation-delay:.05s}
-.hero-text>:nth-child(2),.page-head .wrap>:nth-child(2){animation-delay:.15s}
-.hero-text>:nth-child(3),.page-head .wrap>:nth-child(3){animation-delay:.28s}
-.hero-text>:nth-child(4){animation-delay:.4s}
-.hero-text>:nth-child(5){animation-delay:.5s}
-.hero-main{animation:zoom-in 1.1s .2s cubic-bezier(.2,.7,.2,1) both}
-.hero-sub{animation:zoom-in 1s .55s cubic-bezier(.2,.7,.2,1) both,floaty 7s 1.6s ease-in-out infinite}
-.hero-chip{animation:zoom-in 1s .8s cubic-bezier(.2,.7,.2,1) both,floaty 6s 1.8s ease-in-out infinite reverse}
 .quick-card{animation:rise 1s .6s cubic-bezier(.2,.7,.2,1) both}
 
 /* Aparicion al hacer scroll (solo con JS) */
@@ -37,3 +28,15 @@
   .ticker-set[aria-hidden]{display:none}
   .road-truck{display:none}
 }
+
+@keyframes kenburns{from{transform:scale(1)}to{transform:scale(1.07)}}
+.hero2-body>*{animation:rise .9s cubic-bezier(.2,.7,.2,1) both}
+.hero2-body>:nth-child(1){animation-delay:.1s}
+.hero2-body>:nth-child(2){animation-delay:.2s}
+.hero2-body>:nth-child(3){animation-delay:.35s}
+.hero2-body>:nth-child(4){animation-delay:.45s}
+.hero2-chip{animation:zoom-in 1s .8s cubic-bezier(.2,.7,.2,1) both,floaty 6s 1.8s ease-in-out infinite reverse}
+.page-head .wrap>*{animation:rise .9s cubic-bezier(.2,.7,.2,1) both}
+.page-head .wrap>:nth-child(1){animation-delay:.05s}
+.page-head .wrap>:nth-child(2){animation-delay:.15s}
+.page-head .wrap>:nth-child(3){animation-delay:.28s}

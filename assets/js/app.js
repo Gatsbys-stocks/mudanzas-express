@@ -46,7 +46,7 @@
 /* ---------- Aparicion al hacer scroll ---------- */
 (function () {
   var SELECTOR = ".sec-head, .bento .card, .grid-3 > .card, .steps li, .route, .pano, .gallery figure, .faq, .cta-panel, " +
-    ".split > *, .strip-grid > div, .wa-card, .form, .checks.two";
+    ".split > *, .wa-card, .form, .checks.two, .why-left, .feat, .stat, .panel, .zone";
   var items = [].slice.call(document.querySelectorAll(SELECTOR));
   var reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
   if (!items.length || reduce || !("IntersectionObserver" in window)) {
@@ -66,6 +66,55 @@
     });
   }, { rootMargin: "0px 0px -8% 0px", threshold: 0.08 });
   items.forEach(function (el) { io.observe(el); });
+})();
+
+/* ---------- Carrusel de servicios ---------- */
+(function () {
+  var track = document.getElementById("carousel");
+  var prev = document.getElementById("carPrev");
+  var next = document.getElementById("carNext");
+  if (!track || !prev || !next) return;
+  function step() {
+    var card = track.querySelector(".scard");
+    return card ? card.getBoundingClientRect().width + 16 : 300;
+  }
+  function update() {
+    prev.disabled = track.scrollLeft < 8;
+    next.disabled = track.scrollLeft + track.clientWidth >= track.scrollWidth - 8;
+  }
+  prev.addEventListener("click", function () { track.scrollBy({ left: -step(), behavior: "smooth" }); });
+  next.addEventListener("click", function () { track.scrollBy({ left: step(), behavior: "smooth" }); });
+  track.addEventListener("scroll", update, { passive: true });
+  window.addEventListener("resize", update);
+  track.addEventListener("keydown", function (e) {
+    if (e.key === "ArrowRight") { e.preventDefault(); next.click(); }
+    if (e.key === "ArrowLeft") { e.preventDefault(); prev.click(); }
+  });
+  update();
+})();
+
+/* ---------- Contadores (data-count) ---------- */
+(function () {
+  var nums = [].slice.call(document.querySelectorAll("[data-count]"));
+  if (!nums.length) return;
+  var reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  if (reduce || !("IntersectionObserver" in window)) return;
+  nums.forEach(function (el) { el.textContent = "0"; });
+  var io = new IntersectionObserver(function (entries) {
+    entries.forEach(function (entry) {
+      if (!entry.isIntersecting) return;
+      var el = entry.target, end = parseInt(el.getAttribute("data-count"), 10), t0 = null;
+      io.unobserve(el);
+      function tick(t) {
+        if (t0 === null) t0 = t;
+        var p = Math.min(1, (t - t0) / 1100);
+        el.textContent = Math.round(end * (1 - Math.pow(1 - p, 3)));
+        if (p < 1) requestAnimationFrame(tick);
+      }
+      requestAnimationFrame(tick);
+    });
+  }, { threshold: 0.6 });
+  nums.forEach(function (el) { io.observe(el); });
 })();
 
 /* ---------- Fotos ampliables (figure[data-lightbox]) ---------- */

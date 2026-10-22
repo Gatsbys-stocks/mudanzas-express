@@ -1,0 +1,16 @@
+{%- comment -%} Carrusel de servicios en tarjetas verticales con foto (portada). Datos: _data/services.yml {%- endcomment -%}
+<div class="carousel" id="carousel" tabindex="0" aria-label="Servicios">
+  {%- for s in site.data.services %}
+  {%- assign big = '/assets/img/' | append: s.image | relative_url -%}
+  {%- assign small = big | replace: '.webp', '-640.webp' -%}
+  <a class="scard" href="{{ '/servicios/' | relative_url }}">
+    <img src="{{ small }}" alt="{{ s.image_alt }}" loading="lazy" width="640" height="480" style="object-position:{{ s.focus | default: '50% 50%' }}">
+    <span class="scard-ico">{% include icon.html name=s.icon class="ico" %}</span>
+    <span class="scard-body">
+      <h3>{{ s.title }}</h3>
+      <p>{{ s.short }}</p>
+      <span class="scard-link">Ver servicio →</span>
+    </span>
+  </a>
+  {%- endfor %}
+</div>

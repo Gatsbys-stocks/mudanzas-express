@@ -5,50 +5,84 @@ permalink: /
 seo_title: "Mudanzas Express BCN | Mudanzas en Barcelona, toda España, Francia, Alemania y Portugal"
 description: "Mudanzas de pisos, casas, oficinas y empresas en toda España, con base en Barcelona, y mudanzas internacionales a Francia, Alemania y Portugal. Pide presupuesto por WhatsApp."
 ---
-<section class="hero">
-  <div class="wrap hero-grid">
-    <div class="hero-text">
-      <p class="pill"><span class="dot"></span>Base en Barcelona · toda España</p>
-      <h1>Mudanzas en Barcelona, <span class="mark">toda España</span> y Europa</h1>
-      <p class="lead">Mudanzas de pisos, casas, oficinas y empresas, con camiones y personal propios. Servicio internacional a Francia, Alemania y Portugal.</p>
+<section class="hero2">
+  <div class="hero2-media">
+    <picture>
+      <source media="(max-width:700px)" srcset="{{ '/assets/img/flota/hero-movil.webp' | relative_url }}">
+      <img class="hero2-img" src="{{ '/assets/img/flota/hero.webp' | relative_url }}" srcset="{{ '/assets/img/flota/hero-1000.webp' | relative_url }} 1000w, {{ '/assets/img/flota/hero.webp' | relative_url }} 2000w" sizes="(min-width:1280px) 1190px, 94vw" alt="Furgonetas y camiones de mudanzas con la Sagrada Familia al fondo" width="2000" height="966">
+    </picture>
+    <div class="hero2-body">
+      <p class="pill pill-glass"><span class="dot"></span>Base en Barcelona · toda España</p>
+      <h1><span class="giant">Mudanzas<small>.BCN</small></span><span class="hero2-sub">en Barcelona, toda España y Europa</span></h1>
+      <p class="hero2-lead">Mudanzas de pisos, casas, oficinas y empresas, con camiones y personal propios. Servicio internacional a Francia, Alemania y Portugal.</p>
       <div class="hero-actions">
-        {% include wa-button.html class="btn btn-wa btn-lg" label="Pedir presupuesto por WhatsApp" %}
-        <a class="btn btn-outline btn-lg" href="{{ '/servicios/' | relative_url }}">Ver servicios</a>
+        {% include wa-button.html class="btn btn-wa btn-lg" label="Pedir presupuesto" %}
+        <a class="btn btn-glass btn-lg" href="{{ '/servicios/' | relative_url }}">Ver servicios</a>
       </div>
-      <ul class="hero-points">
-        <li>{% include icon.html name="check" class="mini" %} Particulares y empresas</li>
-        <li>{% include icon.html name="check" class="mini" %} Presupuesto por WhatsApp</li>
-      </ul>
     </div>
-    <div class="hero-media">
-      <img class="hero-main" src="{{ '/assets/img/flota/camion-rampa.webp' | relative_url }}" srcset="{{ '/assets/img/flota/camion-rampa-640.webp' | relative_url }} 640w, {{ '/assets/img/flota/camion-rampa.webp' | relative_url }} 1200w" sizes="(min-width:900px) 540px, 92vw" alt="Camión de mudanzas abierto, con cajas y un mueble protegido, y la rampa bajada" width="1200" height="989">
-      <img class="hero-sub" src="{{ '/assets/img/flota/embalaje-640.webp' | relative_url }}" alt="Plástico de burbujas, film, mantas y cinta para proteger los muebles" width="640" height="403" loading="lazy">
-      <div class="hero-chip">{% include icon.html name="globe" class="mini" %}<span><strong>Mudanzas internacionales</strong>Francia · Alemania · Portugal</span></div>
-    </div>
+    <div class="hero2-chip">{% include icon.html name="globe" class="mini" %}<span><strong>Mudanzas internacionales</strong>Francia · Alemania · Portugal</span></div>
   </div>
 </section>
 
 {% include quick-quote.html %}
 
-<section class="strip">
-  <div class="wrap strip-grid">
-    {%- for item in site.data.highlights %}
-    <div>{% include icon.html name=item.icon class="strip-ico" %}<span><strong>{{ item.title }}</strong>{{ item.text }}</span></div>
-    {%- endfor %}
-  </div>
-</section>
-
 {% include ticker.html %}
 
 <section class="section">
-  <div class="wrap">
-    <div class="sec-head">
-      <p class="eyebrow">Servicios</p>
-      <h2>Todo lo que necesitas para tu mudanza</h2>
-      <p>Desde un piso hasta una oficina completa: nos encargamos del traslado y de lo que hay alrededor.</p>
+  <div class="wrap why">
+    <div class="why-left">
+      <p class="eyebrow">Por qué elegirnos</p>
+      <h2>Por qué elegir {{ site.data.site.name }} para tu mudanza</h2>
+      <p>{{ site.data.why.intro }}</p>
+      <div class="stats">
+        {%- for st in site.data.why.stats %}
+        <div class="stat"><span class="stat-ico">{% include icon.html name=st.icon class="ico" %}</span><span class="stat-num" data-count="{{ st.number }}">{{ st.number }}</span><span class="stat-label">{{ st.label }}</span></div>
+        {%- endfor %}
+      </div>
     </div>
-    {% include service-cards.html %}
-    <p class="center mt"><a class="btn btn-dark" href="{{ '/servicios/' | relative_url }}">Ver todos los servicios</a></p>
+    <div class="feats">
+      {%- for f in site.data.why.features %}
+      <article class="feat"><span class="feat-ico">{% include icon.html name=f.icon class="ico" %}</span><div><h3>{{ f.title }}</h3><p>{{ f.text }}</p></div></article>
+      {%- endfor %}
+    </div>
+  </div>
+</section>
+
+<section class="section tight">
+  <div class="wrap">
+    <div class="panel">
+      <div class="panel-head">
+        <h2>Servicios</h2>
+        <p>Desde un piso hasta una oficina completa: nos encargamos del traslado y de lo que hay alrededor.</p>
+      </div>
+      {% include service-carousel.html %}
+      <div class="panel-foot">
+        <a class="btn btn-dark" href="{{ '/servicios/' | relative_url }}">Ver todos los servicios</a>
+        <div class="car-btns">
+          <button class="car-btn" id="carPrev" type="button" aria-label="Servicios anteriores">‹</button>
+          <button class="car-btn" id="carNext" type="button" aria-label="Servicios siguientes">›</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section tight">
+  <div class="wrap zones">
+    <article class="zone zone-slate">
+      <p class="eyebrow">Dónde trabajamos</p>
+      <h2>Mudanzas nacionales e internacionales</h2>
+      <p>Trabajamos en toda España y organizamos mudanzas a Francia, Alemania y Portugal.</p>
+      <a class="btn btn-light" href="{{ '/mudanzas/' | relative_url }}">Ver zonas de trabajo</a>
+    </article>
+    <a class="zone zone-photo" href="{{ '/mudanzas/' | relative_url }}">
+      <img src="{{ '/assets/img/flota/barcelona-640.webp' | relative_url }}" srcset="{{ '/assets/img/flota/barcelona-640.webp' | relative_url }} 640w, {{ '/assets/img/flota/barcelona.webp' | relative_url }} 1200w" sizes="(min-width:900px) 330px, 92vw" alt="Vista de Barcelona con la Sagrada Familia" loading="lazy" width="640" height="276">
+      <span class="zone-body"><h3>Toda España</h3><p>Con base en Barcelona</p></span>
+    </a>
+    <a class="zone zone-photo" href="{{ '/mudanzas/' | relative_url }}">
+      <img src="{{ '/assets/img/flota/camion-blanco-lateral-640.webp' | relative_url }}" srcset="{{ '/assets/img/flota/camion-blanco-lateral-640.webp' | relative_url }} 640w, {{ '/assets/img/flota/camion-blanco-lateral.webp' | relative_url }} 1200w" sizes="(min-width:900px) 330px, 92vw" alt="Camión blanco con caja cerrada en una calle de Barcelona" loading="lazy" width="640" height="344">
+      <span class="zone-body"><h3>Francia · Alemania · Portugal</h3><p>Mudanzas internacionales</p></span>
+    </a>
   </div>
 </section>
 
@@ -68,23 +102,6 @@ description: "Mudanzas de pisos, casas, oficinas y empresas en toda España, con
 </section>
 
 <section class="section">
-  <div class="wrap split">
-    <div>
-      <p class="eyebrow">Dónde trabajamos</p>
-      <h2>Desde Barcelona a toda España y Europa</h2>
-      <p>Nuestra base está en Barcelona y realizamos mudanzas en toda España. Además, organizamos mudanzas internacionales a tres países:</p>
-      <ul class="flags">
-        {%- for c in site.data.countries %}
-        <li>{{ c.flag }} {{ c.name }}</li>
-        {%- endfor %}
-      </ul>
-      <a class="btn btn-outline" href="{{ '/mudanzas/' | relative_url }}">Mudanzas nacionales e internacionales</a>
-    </div>
-    <div>{% include route-map.html %}</div>
-  </div>
-</section>
-
-<section class="section alt">
   <div class="wrap">
     <div class="sec-head">
       <p class="eyebrow">Flota</p>

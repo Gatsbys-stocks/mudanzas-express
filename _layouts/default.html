@@ -6,12 +6,14 @@
 <body>
 <a class="skip" href="#main">Saltar al contenido</a>
 <div class="progress" id="progress" aria-hidden="true"></div>
+<div class="page">
 {% include header.html %}
 <main id="main">
 {{ content }}
 </main>
 {% include cta-band.html %}
 {% include footer.html %}
+</div>
 {% include wa-button.html class="wa-float" label="Pedir presupuesto" aria="Pedir presupuesto por WhatsApp" %}
 {%- if site.data.site.goatcounter %}
 <script data-goatcounter="{{ site.data.site.goatcounter }}" async src="{{ '/assets/js/count.js' | relative_url }}"></script>
